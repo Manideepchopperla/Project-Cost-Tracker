@@ -16,7 +16,7 @@ import {
   InputGroup,
   InputLeftElement,
 } from '@chakra-ui/react';
-import { DollarSign } from 'lucide-react';
+import { IndianRupee } from 'lucide-react';
 import { addItem, updateItem } from '../../redux/slices/itemsSlice';
 
 const ItemForm = ({ isOpen, onClose, item, userId }) => {
@@ -151,7 +151,7 @@ const ItemForm = ({ isOpen, onClose, item, userId }) => {
               <InputGroup>
                 <InputLeftElement
                   pointerEvents="none"
-                  children={<DollarSign size={16} color="gray" />}
+                  children={<IndianRupee size={16} color="gray" />}
                 />
                 <Input
                   type="number"

@@ -43,6 +43,15 @@ const AuthPage = () => {
     if (isLogin) {
       dispatch(loginUser({ email, password }))
         .unwrap()
+        .then(() => {
+        toast({
+          title: 'Login Successful',
+          description: 'Welcome back!',
+          status: 'success',
+          duration: 3000,
+          isClosable: true,
+        });
+      })
         .catch((err) => {
           toast({
             title: 'Login Failed',
@@ -55,6 +64,15 @@ const AuthPage = () => {
     } else {
       dispatch(registerUser({ email, password }))
         .unwrap()
+        .then(() => {
+        toast({
+          title: 'Registration Successful',
+          description: 'Account created successfully!',
+          status: 'success',
+          duration: 3000,
+          isClosable: true,
+        });
+      })
         .catch((err) => {
           toast({
             title: 'Registration Failed',
@@ -71,6 +89,14 @@ const AuthPage = () => {
   const handleGoogleSignIn = () => {
     dispatch(loginWithGoogle())
       .unwrap()
+      .then(() => {
+        toast({
+          title: 'Login Successful',
+          status: 'success',
+          duration: 3000,
+          isClosable: true,
+        });
+      })
       .catch((err) => {
         toast({
           title: 'Google Sign In Failed',

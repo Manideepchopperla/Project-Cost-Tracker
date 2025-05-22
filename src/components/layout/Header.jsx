@@ -12,16 +12,27 @@ import {
   MenuList,
   Text,
   Avatar,
+  useToast,
 } from '@chakra-ui/react';
 import { ChevronDownIcon, LogOut, CircleDollarSign } from 'lucide-react';
 import { logoutUser } from '../../redux/slices/authSlice';
 
 const Header = () => {
-  const dispatch = useDispatch();
   const { user } = useSelector(state => state.auth);
+  const dispatch = useDispatch();
+  const toast = useToast();
 
   const handleLogout = () => {
-    dispatch(logoutUser());
+    dispatch(logoutUser())
+    .unwrap()
+    .then(() => {
+        toast({
+          title: 'Logout Successful',
+          status: 'success',
+          duration: 3000,
+          isClosable: true,
+        });
+      })
   };
 
   return (
