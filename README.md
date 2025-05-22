@@ -1,4 +1,4 @@
-# 🧾 Project Cost Tracker [Live Link](https://project-cost-tracker-my35.vercel.app/)
+# 🧾 Project Cost Tracker [Live Link](https://project-cost-tracker-kappa.vercel.app/)
 
 A minimal yet powerful React-based web app that helps users manage and track project expenses efficiently. Supports itemized cost breakdowns, authentication, and dynamic total cost display with data persisted on Firebase Firestore.
 
